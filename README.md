@@ -1,3 +1,9 @@
+(slightly modified from original for displaying 'file size' within log files with '--format %x' option)  
+.  
+.  
+.  
+
+
 [![GitHub Build Status](https://github.com/inotify-tools/inotify-tools/actions/workflows/build.yml/badge.svg)](https://github.com/inotify-tools/inotify-tools/actions)
 [![Travis Build Status](https://travis-ci.com/inotify-tools/inotify-tools.svg?branch=master)](https://travis-ci.com/inotify-tools/inotify-tools)
 [![Cirrus Build Status](https://api.cirrus-ci.com/github/inotify-tools/inotify-tools.svg?branch=master)](https://cirrus-ci.com/github/inotify-tools/inotify-tools)
