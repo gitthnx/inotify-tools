@@ -2271,6 +2271,55 @@ int inotifytools_snprintf(struct nstring* out,
 			continue;
 		}
 
+		
+//#ifdef EXAMPLE_FMTOPTION_FILESIZE             
+if (ch1 == 'x') {
+
+                sprintf(sizeval, "%s ", "helloWorld" );
+                        len_sizeval=strlen(sizeval);
+                        //len_sizeval=sizeof(sizeval);
+
+                        //sprintf(event_path, "%s%s", filename, eventname);
+                        sprintf(event_path, "%s", filename);
+                        stat(event_path, &stats);
+            direntrysize = stats.st_size;
+
+                        //dirsize changes?
+                        //dirsize=?
+
+                        strcat(event_path, eventname);
+                        stat(event_path, &stats);
+            filesize = stats.st_size;
+
+                        //~line 2170: const char* filename = inotifytools_filename_from_event(event, &eventname, &dirnamelen);
+
+                        //sprintf(&out->buf[ind], "%s %s %lu %s %lu filesize %lu %lu %lu %lu ", sizeval, filename, strlen(filename), eventname, strlen(eventname), filesize, dirnamelen, len_sizeval, sizeof(sizeval) );
+                        //sprintf(&out->buf[ind], "%s direntry_%lu %lu %s %lu filesize %lu %lu %lu %lu ", sizeval, direntrysize, strlen(filename), eventname, strlen(eventname), filesize, dirnamelen, len_sizeval, sizeof(sizeval) );
+                        sprintf(&out->buf[ind], "direntry_%lu %lu %s %lu filesize %lu %lu ", direntrysize, strlen(filename), eventname, strlen(eventname), filesize, dirnamelen );
+                        ind+=len_sizeval+strlen(filename)+strlen(eventname)+30;
+
+
+                        /*out->buf[ind++] = '\t';                       
+                        out->buf[ind++] = 'h';
+                        out->buf[ind++] = 'e';
+                        out->buf[ind++] = 'l';
+                        out->buf[ind++] = 'l';
+                        out->buf[ind++] = 'o';
+                        out->buf[ind++] = 'W';
+                        out->buf[ind++] = 'o';
+                        out->buf[ind++] = 'r';
+                        out->buf[ind++] = 'l';
+                        out->buf[ind++] = 'd';
+                        out->buf[ind++] = '\t';
+                        */
+
+                        ++i;
+                        continue;
+
+                }
+//#endif            
+
+		
 		// Check if next char in fmt is e
 		if (i < strlen(fmt) - 2 && fmt[i + 2] == 'e') {
 			eventstr =
