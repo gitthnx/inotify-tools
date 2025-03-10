@@ -225,6 +225,12 @@ Replaced with the current Time in the format specified by the \-\-timefmt option
 which should be a format string suitable for passing to
 .BR strftime (3).
 
+
+.TP
+%x
+Replaced with the file size in bytes.
+
+
 .TP
 %0
 Replaced with NUL.
