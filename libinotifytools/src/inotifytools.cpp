@@ -2170,6 +2170,13 @@ int inotifytools_snprintf(struct nstring* out,
 	static char timestr[MAX_STRLEN];
 	static time_t now;
 
+	
+    struct stat stats;
+    char sizeval[25]="helloWorld";
+    char event_path[1024]="";
+    size_t len_sizeval=0, direntrysize=0, dirsize=0, filesize=0;
+
+	
 	size_t dirnamelen = 0;
 	const char* eventname;
 	const char* filename =
